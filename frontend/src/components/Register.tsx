@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useAuth } from '../contexts/AuthContext';
@@ -38,11 +37,10 @@ export function Register({ onNavigate }: RegisterProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row pt-16">
-      {/* Form Section */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 bg-white">
-        <div className="w-full max-w-md">
-          <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Create Account</h1>
+    <div className="min-h-screen flex items-center justify-center pt-16 bg-gray-50">
+      <div className="w-full max-w-md mx-auto p-6">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h1 className="text-2xl font-bold mb-6 text-center">Create Account</h1>
           
           {error && (
             <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded text-sm">
@@ -50,7 +48,7 @@ export function Register({ onNavigate }: RegisterProps) {
             </div>
           )}
           
-          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="email" className="text-sm font-medium">Email</Label>
               <Input
@@ -127,15 +125,6 @@ export function Register({ onNavigate }: RegisterProps) {
             </button>
           </p>
         </div>
-      </div>
-      
-      {/* Image Section - Hidden on mobile, visible on desktop */}
-      <div className="hidden md:block md:w-1/2 bg-gray-50">
-        <ImageWithFallback
-          src="https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg"
-          alt="Organization illustration"
-          className="w-full h-full object-cover"
-        />
       </div>
     </div>
   );
