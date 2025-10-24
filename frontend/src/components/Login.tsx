@@ -31,40 +31,42 @@ export function Login({ onNavigate }: LoginProps) {
   };
 
   return (
-    <div className="min-h-screen flex pt-16">
-      {/* Left Column - Form */}
-      <div className="w-1/2 flex items-center justify-center p-12 bg-white">
+    <div className="min-h-screen flex flex-col md:flex-row pt-16">
+      {/* Form Section */}
+      <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 bg-white">
         <div className="w-full max-w-md">
-          <h1 className="mb-8">Sign In</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">Sign In</h1>
           
           {error && (
-            <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+            <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded text-sm">
               {error}
             </div>
           )}
           
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-sm font-medium">Email</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-2 border-black"
+                className="mt-2 border-gray-300 focus:border-black focus:ring-1 focus:ring-black"
+                placeholder="Enter your email"
                 required
                 disabled={loading}
               />
             </div>
             
             <div>
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-sm font-medium">Password</Label>
               <Input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-2 border-black"
+                className="mt-2 border-gray-300 focus:border-black focus:ring-1 focus:ring-black"
+                placeholder="Enter your password"
                 required
                 disabled={loading}
               />
@@ -72,18 +74,18 @@ export function Login({ onNavigate }: LoginProps) {
             
             <button
               type="submit"
-              className="w-full py-3 bg-black text-white rounded hover:bg-gray-800 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 bg-black text-white rounded hover:bg-gray-800 transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed font-medium"
               disabled={loading}
             >
               {loading ? 'Signing In...' : 'Sign In'}
             </button>
           </form>
           
-          <p className="mt-6 text-center text-gray-600">
+          <p className="mt-6 text-center text-gray-600 text-sm">
             Don't have an account?{' '}
             <button
               onClick={() => onNavigate('register')}
-              className="text-black underline hover:no-underline"
+              className="text-black underline hover:no-underline font-medium"
               disabled={loading}
             >
               Sign Up
@@ -92,8 +94,8 @@ export function Login({ onNavigate }: LoginProps) {
         </div>
       </div>
       
-      {/* Right Column - Illustration */}
-       <div className="w-1/2 bg-gray-50">
+      {/* Image Section - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:block md:w-1/2 bg-gray-50">
         <ImageWithFallback
           src="https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg"
           alt="Organization illustration"
