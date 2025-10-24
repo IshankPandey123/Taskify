@@ -46,7 +46,7 @@ export function Navbar({ isLoggedIn, currentPage, onNavigate, onLogout }: Navbar
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="bg-white border-t border-gray-200">
+        <div className="bg-white border-t border-gray-200 shadow-lg">
           <div className="px-4 py-4 space-y-4">
             {/* Navigation Links */}
             <div className="space-y-3">
@@ -96,7 +96,7 @@ export function Navbar({ isLoggedIn, currentPage, onNavigate, onLogout }: Navbar
               ) : (
                 <button
                   onClick={handleLogout}
-                  className="w-full py-3 bg-red-600 text-white rounded hover:bg-red-700 transition-colors"
+                  className="w-full py-3 bg-gray-800 text-white rounded hover:bg-gray-900 transition-colors font-medium"
                 >
                   Logout
                 </button>
