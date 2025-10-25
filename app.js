@@ -11,7 +11,7 @@ conn();
 
 // Enable CORS for frontend communication
 app.use(cors({
-  origin: 'http://localhost:3001', // Frontend port
+  origin: process.env.NODE_ENV === 'production' ? false : 'http://localhost:3001',
   credentials: true
 }));
 

@@ -51,7 +51,7 @@ import path from 'path';
     },
     build: {
       target: 'esnext',
-      outDir: '../build',
+      outDir: 'build',
     },
     server: {
       port: 3001,
