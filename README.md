@@ -1,5 +1,5 @@
 # Taskify - Todo App
-App Link -> https://taskify-1hv9ngclq-ishank-pandeys-projects.vercel.app/
+App Link -> https://taskify-app-xi.vercel.app/
 A modern full-stack todo application built with React, Node.js, Express, and MongoDB. Features user authentication, task management, and a beautiful UI.
 
 ![Taskify Logo](frontend/public/favicon.svg)
