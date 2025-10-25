@@ -96,7 +96,7 @@ export function Navbar({ isLoggedIn, currentPage, onNavigate, onLogout }: Navbar
               ) : (
                 <button
                   onClick={handleLogout}
-                  className="w-full py-3 bg-gray-800 text-white rounded hover:bg-gray-900 transition-colors font-medium"
+                  className="w-full py-3 bg-black text-white rounded hover:bg-gray-800 transition-colors font-medium"
                 >
                   Logout
                 </button>
